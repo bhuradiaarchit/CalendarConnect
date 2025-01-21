@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google OAuth Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Google OAuth App</h1>
+
+        {% if user %}
+            <h2>Hello, {{ user['email'] }}!</h2>
+            <p><a href="{{ url_for('logout') }}">Logout</a></p>
+        {% else %}
+            <p>Welcome! <a href="{{ url_for('login') }}">Login with Google</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6">Google Calendar Events</h1>
+        
+        <form method="get" action="{{ url_for('events') }}" class="mb-8 space-y-4">
+            <div class="flex flex-wrap gap-4">
+                <div class="flex items-center">
+                    <label for="start_date" class="mr-2">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" 
+                           value="{{ request.args.get('start_date', '') }}"
+                           class="border rounded px-2 py-1">
+                </div>
+                <div class="flex items-center">
+                    <label for="end_date" class="mr-2">End Date:</label>
+                    <input type="date" id="end_date" name="end_date"
+                           value="{{ request.args.get('end_date', '') }}"
+                           class="border rounded px-2 py-1">
+                </div>
+                <button type="submit" 
+                        class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">
+                    Filter
+                </button>
+            </div>
+        </form>
+
+        {% if events %}
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-300 px-4 py-2">Event Name</th>
+                            <th class="border border-gray-300 px-4 py-2">Start Time</th>
+                            <th class="border border-gray-300 px-4 py-2">End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                        <tr class="hover:bg-gray-50">
+                            <td class="border border-gray-300 px-4 py-2">
+                                {{ event.get('summary', 'No Title') }}
+                            </td>
+                            <td class="border border-gray-300 px-4 py-2">
+                                {{ event.start.get('dateTime', event.start.get('date')) }}
+                            </td>
+                            <td class="border border-gray-300 px-4 py-2">
+                                {{ event.end.get('dateTime', event.end.get('date')) }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="text-gray-600">No events found for the selected date range.</p>
+        {% endif %}
+
+        <div class="mt-6">
+            <a href="{{ url_for('index') }}" 
+               class="text-blue-500 hover:underline">
+                Back to Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>
