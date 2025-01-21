@@ -79,7 +79,7 @@ http://15.207.54.193:5000
 4. Optionally, specify date ranges to filter events.
 
 
-*Note: Only Gmail accounts added as **testers* in the Google Cloud Console project can successfully authenticate. This is required to comply with Google's OAuth 2.0 policies during the testing phase.
+Note: Only Gmail accounts added as testers in the Google Cloud Console project can successfully authenticate. This is required to comply with Google's OAuth 2.0 policies during the testing phase.
 
 ---
 
