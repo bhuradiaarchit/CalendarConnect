@@ -94,12 +94,7 @@ Note: Only Gmail accounts added as testers in the Google Cloud Console project c
 
 ---
 
-## Screenshots
-![WhatsApp Image 2025-01-21 at 20 56 39 (2)](https://github.com/user-attachments/assets/73ffdbc5-f903-4aec-8ad7-3cee8fd9e55d)
-![WhatsApp Image 2025-01-21 at 20 57 04 (3)](https://github.com/user-attachments/assets/48fe8fc1-97b6-494f-8414-daf70be1aa7a)
-![image](https://github.com/user-attachments/assets/2ee23b7d-232c-4110-a5a4-e13132fc84b4)
-![image](https://github.com/user-attachments/assets/37d2850f-d4d4-43db-9c20-035c132d3a17)
-![image](https://github.com/user-attachments/assets/6a41a7e1-0d1b-4913-8c83-bc58583d65c8)
+
 
 ---
 
@@ -108,3 +103,4 @@ Note: Only Gmail accounts added as testers in the Google Cloud Console project c
 - [Google OAuth Documentation](https://developers.google.com/identity/protocols/oauth2)
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Docker Documentation](https://docs.docker.com/)
+
